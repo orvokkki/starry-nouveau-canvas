@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom periwinkle and celestial colors
+				periwinkle: {
+					300: 'hsl(202, 100%, 85%)',
+					400: 'hsl(202, 100%, 80%)',
+					500: 'hsl(202, 100%, 75%)',
 				}
 			},
 			borderRadius: {
@@ -84,11 +91,46 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'twinkle': {
+					'0%, 100%': {
+						opacity: '0.3',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1.5)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0) rotate(0deg)'
+					},
+					'50%': {
+						transform: 'translateY(-20px) rotate(5deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out forwards',
+				'twinkle': 'twinkle 3s infinite',
+				'float': 'float 6s ease-in-out infinite'
+			},
+			fontFamily: {
+				'serif': ['Playfair Display', 'Georgia', 'serif'],
+				'sans': ['Inter', 'system-ui', 'sans-serif']
 			}
 		}
 	},
