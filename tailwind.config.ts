@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -65,10 +64,16 @@ export default {
 				},
 				// Custom periwinkle and celestial colors
 				periwinkle: {
-					300: 'hsl(202, 100%, 85%)',
+					300: '#DEE8FF',
 					400: 'hsl(202, 100%, 80%)',
 					500: 'hsl(202, 100%, 75%)',
+				},
+				orange: {
+					300: '#F8AD7C',
 				}
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -130,7 +135,8 @@ export default {
 			},
 			fontFamily: {
 				'serif': ['Playfair Display', 'Georgia', 'serif'],
-				'sans': ['Inter', 'system-ui', 'sans-serif']
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'italiana': ['Italiana', 'sans-serif']
 			}
 		}
 	},
