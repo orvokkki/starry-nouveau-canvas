@@ -1,28 +1,34 @@
-
-import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { Star } from "lucide-react";
 
 const Portfolio = () => {
   const projects = [
     {
-      title: "Mystic E-commerce",
-      description: "A celestial-themed online store with ethereal animations and intuitive navigation.",
-      image: "/placeholder.svg",
-      tags: ["UI/UX", "E-commerce", "Animation"],
-      link: "#"
+      title: "Celestial Banking App",
+      description: "A modern banking interface inspired by cosmic design principles, featuring intuitive navigation and stellar user experience.",
+      category: "Mobile App",
+      tech: ["React Native", "TypeScript", "Figma"],
+      color: "from-blue-400 to-cyan-500"
     },
     {
-      title: "Stellar Dashboard",
-      description: "Data visualization platform inspired by constellation patterns and cosmic beauty.",
-      image: "/placeholder.svg",
-      tags: ["Dashboard", "Data Viz", "SaaS"],
-      link: "#"
+      title: "Art Nouveau E-commerce",
+      description: "Luxury fashion platform combining Art Nouveau aesthetics with contemporary e-commerce functionality.",
+      category: "Web Design",
+      tech: ["React", "Next.js", "Tailwind"],
+      color: "from-purple-400 to-pink-500"
     },
     {
-      title: "Luna Mobile App",
-      description: "Meditation app with art nouveau aesthetics and celestial guidance features.",
-      image: "/placeholder.svg",
-      tags: ["Mobile", "Wellness", "Art Direction"],
-      link: "#"
+      title: "Mystical Dashboard",
+      description: "Analytics dashboard with an ethereal design approach, making complex data beautiful and accessible.",
+      category: "Dashboard",
+      tech: ["Vue.js", "D3.js", "Sketch"],
+      color: "from-emerald-400 to-teal-500"
+    },
+    {
+      title: "Luna Meditation App",
+      description: "Mindfulness application designed to guide users through cosmic-inspired meditation journeys.",
+      category: "Mobile App",
+      tech: ["Flutter", "Firebase", "Adobe XD"],
+      color: "from-orange-400 to-yellow-500"
     }
   ];
 
@@ -31,79 +37,65 @@ const Portfolio = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-4">
-            <Sparkles className="w-6 h-6 text-yellow-300 mr-2" aria-hidden="true" />
-            <h2 id="portfolio-heading" className="text-4xl md:text-5xl italiana-regular text-white art-nouveau-heading">
-              Featured Works
-            </h2>
-            <Sparkles className="w-6 h-6 text-yellow-300 ml-2" aria-hidden="true" />
-          </div>
-          <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            A collection of digital experiences crafted with passion and celestial inspiration.
+          <h2 id="portfolio-heading" className="text-4xl md:text-5xl italiana-regular text-black mb-6 art-nouveau-heading">
+            Featured Projects
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-6"></div>
+          <p className="text-gray-800 text-lg max-w-2xl mx-auto">
+            A showcase of digital experiences that blend artistic vision with functional design, 
+            each project telling its own unique story through thoughtful interaction and visual harmony.
           </p>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <article
-              key={index}
-              className="group relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500 border border-white/20 hover:border-cyan-300/50 focus-within:ring-2 focus-within:ring-blue-400"
+            <div 
+              key={index} 
+              className="group bg-white/90 backdrop-blur-md rounded-2xl border border-white/40 p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105"
             >
-              {/* Project Image */}
-              <div className="aspect-video bg-gradient-to-br from-cyan-400 to-blue-500 relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={`${project.title} project screenshot`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              {/* Project Visual */}
+              <div className={`h-48 bg-gradient-to-br ${project.color} rounded-xl mb-6 relative overflow-hidden`}>
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300"></div>
+                <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                  <Star className="w-5 h-5 text-white" aria-hidden="true" />
+                </div>
               </div>
 
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl italiana-regular text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-blue-200 text-sm mb-4 leading-relaxed">
+              {/* Project Info */}
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-semibold text-black italiana-regular group-hover:text-gray-700 transition-colors">
+                    {project.title}
+                  </h3>
+                  <span className="text-xs px-3 py-1 bg-blue-100 text-blue-800 rounded-full">
+                    {project.category}
+                  </span>
+                </div>
+
+                <p className="text-gray-700 leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4" role="list">
-                  {project.tags.map((tag, tagIndex) => (
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, techIndex) => (
                     <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-cyan-500/30 text-cyan-200 text-xs rounded-full border border-cyan-400/30"
-                      role="listitem"
+                      key={techIndex}
+                      className="text-xs px-2 py-1 bg-gray-200 text-gray-800 rounded-md"
                     >
-                      {tag}
+                      {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Project Links */}
-                <div className="flex gap-3">
-                  <a
-                    href={project.link}
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm rounded-lg hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-                    aria-label={`View ${project.title} live demo`}
-                  >
-                    <ExternalLink className="w-4 h-4" aria-hidden="true" />
-                    View Live
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center gap-2 px-4 py-2 border border-white/30 text-white text-sm rounded-lg hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-                    aria-label={`View ${project.title} source code`}
-                  >
-                    <Github className="w-4 h-4" aria-hidden="true" />
-                    Code
-                  </a>
-                </div>
+                {/* Project Link */}
+                <button className="w-full mt-4 group/btn bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 art-nouveau-button focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2">
+                  View Project
+                  <span className="inline-block ml-2 group-hover/btn:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                </button>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>
