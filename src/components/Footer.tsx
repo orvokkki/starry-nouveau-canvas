@@ -1,5 +1,6 @@
 
 import { Star, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -41,15 +42,22 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Impressum */}
+          {/* Legal */}
           <div className="space-y-4">
-            <h3 className="text-white font-medium text-lg">Impressum</h3>
-            <div className="text-sm text-blue-200 space-y-1">
-              <p><strong>Luna Design Studio</strong></p>
-              <p>Musterstraße 123</p>
-              <p>10115 Berlin, Germany</p>
-              <p>USt-IdNr.: DE123456789</p>
-              <p>Verantwortlich für den Inhalt:<br />Luna Schmidt</p>
+            <h3 className="text-white font-medium text-lg">Legal</h3>
+            <div className="text-sm text-blue-200 space-y-2">
+              <Link 
+                to="/impressum" 
+                className="block hover:text-white transition-colors"
+              >
+                Impressum
+              </Link>
+              <Link 
+                to="/contact" 
+                className="block hover:text-white transition-colors"
+              >
+                Contact
+              </Link>
             </div>
           </div>
         </div>

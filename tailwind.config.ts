@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,18 +63,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom periwinkle and celestial colors
+				// Updated gradient colors to match reference image
 				periwinkle: {
 					300: '#DEE8FF',
-					400: 'hsl(202, 100%, 80%)',
-					500: 'hsl(202, 100%, 75%)',
+					400: '#C4D3FF',
+					500: '#A9BEFF',
 				},
 				orange: {
 					300: '#F8AD7C',
+					400: '#F69B5A',
+					500: '#F48938',
 				}
 			},
 			backgroundImage: {
-				'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
+				'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

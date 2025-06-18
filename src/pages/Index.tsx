@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-radial from-orange-300 via-periwinkle-300 to-blue-200 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-radial from-orange-300 via-orange-200 to-periwinkle-300 relative overflow-hidden">
       {/* Celestial background elements */}
       <div className="absolute inset-0 celestial-bg">
         <div className="star star-1"></div>
