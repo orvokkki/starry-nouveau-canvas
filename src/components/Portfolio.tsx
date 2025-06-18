@@ -38,7 +38,7 @@ const Portfolio = () => {
             </h2>
             <Sparkles className="w-6 h-6 text-yellow-300 ml-2" />
           </div>
-          <p className="text-purple-200 text-lg max-w-2xl mx-auto">
+          <p className="text-blue-200 text-lg max-w-2xl mx-auto">
             A collection of digital experiences crafted with passion and celestial inspiration.
           </p>
         </div>
@@ -48,10 +48,10 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500 border border-white/20 hover:border-purple-300/50"
+              className="group relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500 border border-white/20 hover:border-cyan-300/50"
             >
               {/* Project Image */}
-              <div className="aspect-video bg-gradient-to-br from-purple-400 to-pink-400 relative overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-cyan-400 to-blue-500 relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -62,10 +62,10 @@ const Portfolio = () => {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-serif text-white mb-2 group-hover:text-yellow-300 transition-colors">
+                <h3 className="text-xl font-serif text-white mb-2 group-hover:text-cyan-300 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-purple-200 text-sm mb-4 leading-relaxed">
+                <p className="text-blue-200 text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -74,7 +74,7 @@ const Portfolio = () => {
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 bg-purple-500/30 text-purple-200 text-xs rounded-full border border-purple-400/30"
+                      className="px-3 py-1 bg-cyan-500/30 text-cyan-200 text-xs rounded-full border border-cyan-400/30"
                     >
                       {tag}
                     </span>
@@ -83,7 +83,7 @@ const Portfolio = () => {
 
                 {/* Project Links */}
                 <div className="flex gap-3">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm rounded-lg hover:scale-105 transition-all duration-300">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm rounded-lg hover:scale-105 transition-all duration-300">
                     <ExternalLink className="w-4 h-4" />
                     View Live
                   </button>

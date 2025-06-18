@@ -7,7 +7,7 @@ import Contact from "../components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-periwinkle-300 via-purple-400 to-indigo-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-200 via-blue-400 to-indigo-900 relative overflow-hidden">
       {/* Celestial background elements */}
       <div className="absolute inset-0 celestial-bg">
         <div className="star star-1"></div>

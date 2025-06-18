@@ -10,7 +10,7 @@ const Hero = () => {
           <Moon className="w-full h-full text-yellow-200 animate-pulse" />
         </div>
         <div className="absolute -top-10 -right-10 w-16 h-16 opacity-40">
-          <Stars className="w-full h-full text-purple-200 animate-bounce" />
+          <Stars className="w-full h-full text-cyan-200 animate-bounce" />
         </div>
 
         {/* Main heading */}
@@ -18,21 +18,21 @@ const Hero = () => {
           <Sparkles className="w-8 h-8 text-yellow-300 mx-auto mb-4 animate-pulse" />
           <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 art-nouveau-heading animate-fade-in">
             Celestial
-            <span className="block text-transparent bg-gradient-to-r from-yellow-300 via-purple-300 to-pink-300 bg-clip-text">
+            <span className="block text-transparent bg-gradient-to-r from-yellow-300 via-cyan-300 to-blue-400 bg-clip-text">
               Design Studio
             </span>
           </h1>
         </div>
 
         {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-purple-100 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-300">
+        <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-300">
           Creating magical digital experiences that transcend the ordinary. 
           Where art nouveau elegance meets modern innovation.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in animation-delay-600">
-          <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 art-nouveau-button">
+          <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 art-nouveau-button">
             View My Work
           </button>
           <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
@@ -55,9 +55,9 @@ const Hero = () => {
           />
           <defs>
             <linearGradient id="nouveau-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#8B5CF6" />
-              <stop offset="50%" stopColor="#A855F7" />
-              <stop offset="100%" stopColor="#EC4899" />
+              <stop offset="0%" stopColor="#06B6D4" />
+              <stop offset="50%" stopColor="#3B82F6" />
+              <stop offset="100%" stopColor="#1E40AF" />
             </linearGradient>
           </defs>
         </svg>
