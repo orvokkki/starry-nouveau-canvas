@@ -1,4 +1,6 @@
+
 import React from "react";
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -43,11 +45,9 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Updated with ArrowDown */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-hidden="true">
-          <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-600 rounded-full mt-2 animate-pulse"></div>
-          </div>
+          <ArrowDown className="w-6 h-6 text-gray-600" />
         </div>
       </div>
     </section>

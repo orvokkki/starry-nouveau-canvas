@@ -5,9 +5,7 @@ const About = () => {
   const skills = [
     { name: "UI/UX Design", level: 95, icon: Palette },
     { name: "Frontend Development", level: 88, icon: Code },
-    { name: "Art Direction", level: 92, icon: Star },
-    { name: "Drawing & Illustration", level: 90, icon: Brush },
-    { name: "User Research", level: 85, icon: Heart }
+    { name: "Art Direction", level: 92, icon: Star }
   ];
 
   const drawings = [
@@ -36,9 +34,9 @@ const About = () => {
   return (
     <section id="about" className="py-20 relative" role="region" aria-labelledby="about-heading">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
           {/* About Content */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div>
               <h2 id="about-heading" className="text-4xl md:text-5xl italiana-regular text-black mb-6 art-nouveau-heading">
                 About Luna
@@ -64,40 +62,48 @@ const About = () => {
               which constantly inspires my design work and helps me explore new creative directions.
             </p>
 
-            {/* Skills */}
-            <div className="space-y-4 pt-6">
-              {skills.map((skill, index) => {
-                const Icon = skill.icon;
-                return (
-                  <div key={index} className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <Icon className="w-5 h-5 text-cyan-600" aria-hidden="true" />
-                      <span className="text-black font-medium">{skill.name}</span>
-                      <span className="text-gray-700 text-sm ml-auto" aria-label={`${skill.level} percent proficiency`}>{skill.level}%</span>
+            {/* Compact Skills */}
+            <div className="bg-white/60 backdrop-blur-md rounded-xl border border-white/40 p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-black mb-4 flex items-center gap-2">
+                <Code className="w-5 h-5 text-cyan-600" />
+                Core Skills
+              </h3>
+              <div className="grid grid-cols-1 gap-3">
+                {skills.map((skill, index) => {
+                  const Icon = skill.icon;
+                  return (
+                    <div key={index} className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Icon className="w-4 h-4 text-cyan-600" aria-hidden="true" />
+                        <span className="text-black text-sm font-medium">{skill.name}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-16 bg-gray-200 rounded-full h-2" role="progressbar" aria-valuenow={skill.level} aria-valuemin={0} aria-valuemax={100}>
+                          <div
+                            className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+                            style={{ width: `${skill.level}%` }}
+                          ></div>
+                        </div>
+                        <span className="text-gray-700 text-xs w-8" aria-label={`${skill.level} percent proficiency`}>{skill.level}%</span>
+                      </div>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden" role="progressbar" aria-valuenow={skill.level} aria-valuemin={0} aria-valuemax={100}>
-                      <div
-                        className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
 
-          {/* About Image/Visual */}
+          {/* Design Philosophy - Enhanced */}
           <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-3xl backdrop-blur-md border border-white/20 p-8 flex items-center justify-center relative overflow-hidden">
+            <div className="bg-white/20 backdrop-blur-xl rounded-3xl border border-white/30 p-8 shadow-2xl relative overflow-hidden">
               {/* Decorative elements */}
               <div className="absolute top-4 right-4 w-12 h-12 border-2 border-cyan-300/30 rounded-full animate-pulse" aria-hidden="true"></div>
               <div className="absolute bottom-4 left-4 w-8 h-8 bg-blue-400/30 rounded-full animate-bounce" aria-hidden="true"></div>
               <div className="absolute top-1/2 left-4 w-6 h-6 bg-cyan-400/30 rounded-full animate-pulse animation-delay-500" aria-hidden="true"></div>
               
-              {/* Your Photo */}
-              <div className="text-center space-y-4">
-                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-cyan-300/50 mb-6 bg-white/10">
+              {/* Enhanced Photo Section */}
+              <div className="text-center space-y-6">
+                <div className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-white/50 mb-8 bg-white/10 shadow-2xl">
                   <img 
                     src="/lovable-uploads/49f25eae-dc76-4c19-ab2a-d541f722cc15.png" 
                     alt="Luna - UX/UI Designer and Illustrator" 
@@ -105,8 +111,8 @@ const About = () => {
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-2xl italiana-regular text-black mb-2">Design Philosophy</h3>
-                <p className="text-gray-800 text-center italic">
+                <h3 className="text-3xl italiana-regular text-black mb-4">Design Philosophy</h3>
+                <p className="text-gray-800 text-center italic text-lg leading-relaxed">
                   "Every pixel should tell a story, every interaction should feel like poetry."
                 </p>
               </div>

@@ -164,6 +164,20 @@
   .art-nouveau-button:hover::before {
     left: 100%;
   }
+
+  /* Project Animation Styles */
+  .project-card {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .project-expanded {
+    transform: scale(1.02);
+  }
 }
 
 /* Celestial Background Elements */
